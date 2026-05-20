@@ -1,0 +1,63 @@
+CREATE SCHEMA IF NOT EXISTS analytics;
+
+CREATE TABLE IF NOT EXISTS analytics.indian_developer_burnout_2026 (
+    developer_id TEXT,
+    age TEXT,
+    gender TEXT,
+    city TEXT,
+    state TEXT,
+    marital_status TEXT,
+    education_level TEXT,
+    company_type TEXT,
+    company_size TEXT,
+    job_role TEXT,
+    employment_type TEXT,
+    experience_years TEXT,
+    salary_lpa TEXT,
+    years_in_current_company TEXT,
+    promotion_last_2_years TEXT,
+    remote_work_ratio TEXT,
+    weekly_work_hours TEXT,
+    weekend_work_frequency TEXT,
+    night_shift_frequency TEXT,
+    layoffs_seen_in_company TEXT,
+    number_of_switches TEXT,
+    primary_language TEXT,
+    tech_stack TEXT,
+    ai_tools_usage_hours_per_week TEXT,
+    upskilling_hours_per_week TEXT,
+    leetcode_problems_solved TEXT,
+    certifications_count TEXT,
+    side_projects_count TEXT,
+    github_activity_score TEXT,
+    interview_preparation_hours_weekly TEXT,
+    stress_level TEXT,
+    burnout_score TEXT,
+    anxiety_score TEXT,
+    sleep_hours TEXT,
+    caffeine_intake_per_day TEXT,
+    work_life_balance_rating TEXT,
+    imposter_syndrome_score TEXT,
+    social_media_usage_hours TEXT,
+    physical_activity_days_per_week TEXT,
+    therapy_or_counseling TEXT,
+    layoff_anxiety_score TEXT,
+    ai_replacement_fear_score TEXT,
+    job_security_confidence TEXT,
+    emergency_savings_months TEXT,
+    linkedin_job_search_activity TEXT,
+    applied_jobs_last_30_days TEXT,
+    burnout_risk_category TEXT,
+    likely_to_switch_job TEXT,
+    mentally_exhausted TEXT,
+    high_layoff_risk TEXT
+);
+
+COPY analytics.indian_developer_burnout_2026
+FROM '/seed-data/indian_developer_burnout_2026.csv'
+WITH (
+    FORMAT csv,
+    HEADER true,
+    DELIMITER ',',
+    QUOTE '"'
+);
